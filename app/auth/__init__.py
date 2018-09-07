@@ -1,3 +1,3 @@
 from flask import Blueprint
-auth = Blueprint('main',__name__)
-from . import views,error
+auth = Blueprint('auth',__name__)
+from . import views
