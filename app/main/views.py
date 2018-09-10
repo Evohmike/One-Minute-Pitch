@@ -1,7 +1,8 @@
-from flask import render_template
+from flask import render_template,redirect,url_for
 from .import main
 from flask_login import login_required
 from .forms import CategoryForm
+from ..models import Category,Pitch,Comment
 
 # Views
 @main.route('/')
@@ -10,19 +11,22 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
+    category=Category.get_categories()
+
+
     title = "Welcome | One Minute Pitch"
-    return render_template('index.html',title=title)
+    return render_template('index.html',title=title, category=category)
 
 
 @main.route('/category/new', methods=['GET', 'POST'])
 @login_required
-def new_category():
+def profile_category():
     form = CategoryForm()
     if form.validate_on_submit():
         name = form.name.data
         profile_category = Category(name=name)
         profile_category.save_category()
-        return redirect(url_for('.index'))
+        return redirect(url_for('main.index'))
     title = 'New Pitch Category'
     return render_template('profile_category.html', category_form=form)
 
@@ -37,7 +41,6 @@ def category(id):
     return render_template('category.html',title=title, category=category,pitch=pitch)
 
 @main.route('/category/pitch/new/<int:id>', methods=['GET', 'POST'])
-
 @login_required
 def new_pitch(id):
     category = Category.query.get(id)

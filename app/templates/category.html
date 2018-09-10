@@ -1,26 +1,27 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
+
 {% block content %}
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h1>List of {{ category.name }}</h1>
-            </div>
-            <div class="col-md-8">
-                <button class="btn btn-info"><h2><a href="/category/pitch/new/{{ category.id }}"></a>Add a Pitch</h2></button>
-            </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h1>List of {{ category.name }}</h1>
         </div>
-
-            {% for pitch in pitch %}
-                <div class="card">
-                     <div class="card-body">
-                        <a href="/pitch/{{ pitch.id }}">
-                        {{ pitch.pitch}}
-
-                        </a>
-                     </div>
-                </div>
-            {% endfor %}
-            
+        <div class="col-md-8">
+            <button class="btn btn-info"><h2><a href=""></a></h2></button>
+        </div>
     </div>
+
+    {% for pitch in pitch %}
+    <div class="card">
+        <div class="card-body">
+            <a href="/pitch/{{ pitch.id }}">
+                {{ pitch.pitch}}
+
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
 {% endblock %}
