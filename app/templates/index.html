@@ -1,1 +1,59 @@
-<h1> jhvVVVVVVVVVJBCNJDKVWbvascjjjjjvsihf </h1>
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <title> {{ title }} </title>
+
+    <div class="container">
+
+        
+            <br>
+            <br>
+            <br>
+
+        <h1>Home Page</h1>
+
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4 col-lg-4">
+
+                <h5 class="category-header">
+                    List of Categories
+                </h5>
+
+            </div>
+
+            <div class="col-md-4 col-lg-4">
+
+            </div>
+
+            <div class="col-md-4 col-lg-4">
+                <h2 class="category-create">
+                    <button class="btn btn-info"><a href="/category/new">
+                        Add Category
+                    </a></button>
+
+                </h2>
+
+            </div>
+
+        </div>
+        <div>
+            {% for categories in categories %}
+            <ul>
+              <li>
+                        <a href="/category/{{ categories.id }}">
+                            {{ categories.name }}
+                        </a>
+                      </li>
+                    </ul>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+     
