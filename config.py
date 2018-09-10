@@ -6,7 +6,7 @@ class Config:
     '''
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://evohmike:1234@localhost/pitches'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SECRET_KEY = 'onetwo'
+    SECRET_KEY = os.environ.get('SECRET_KEY')
 
 class ProdConfig(Config):
     '''
