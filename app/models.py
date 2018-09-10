@@ -44,6 +44,60 @@ class Role(db.Model):
     def __repr__(self):
         return f'User {self.name}'
 
+class Category(db.Model):
+    __tablename__ = 'categories'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255))
+    pitches = db.relationship('Pitch', backref='category', lazy='dynamic')
+    # comments = db.relationship('Comment', backref='user', lazy='dynamic')
+
+    def save_category(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_categories(cls):
+        categories = Category.query.all()
+        return categories
+
+class Pitch(db.Model):
+    __tablename__ = 'pitches'
+    id = db.Column(db.Integer, primary_key=True)
+    pitch = db.Column(db.String(255))
+    Category= db.category(db.string(255))
+    category_id = db.Column(db.Integer, db.ForeignKey("categories.id"))
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    comments = db.relationship('Comment', backref='pitch', lazy='dynamic')
+
+    def save_pitch(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_pitches(cls, category_id):
+        pitches = Pitch.query.order_by(Pitch.id.desc()).filter_by(category_id=category_id).all()
+
+        return pitches
+
+
+class Comment(db.Model):
+    __tablename__ = 'comments'
+    id = db.Column(db.Integer, primary_key=True)
+    comment = db.Column(db.String(255))
+    pitch_id = db.Column(db.Integer, db.ForeignKey("pitches.id"))
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+
+    def save_comment(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_comments(cls, pitch_id):
+        comments = Comment.query.order_by(Comment.id.desc()).filter_by(pitch_id=pitch_id).all()
+
+        return comments
+
+
 
 
 
