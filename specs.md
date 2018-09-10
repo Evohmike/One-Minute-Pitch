@@ -6,3 +6,4 @@
 4. vote on the pitch they liked by giving it a downvote or upvote.
 5. comment on the different pitches.
 6. view the different categories.
+gi
