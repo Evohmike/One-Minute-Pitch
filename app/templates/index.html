@@ -1,59 +1,56 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 
-    <title> {{ title }} </title>
+<title> {{ title }} </title>
 
-    <div class="container">
+<div class="container">
 
-        
-            <br>
-            <br>
-            <br>
 
-        <h1>Home Page</h1>
+    <br>
+    <br>
+    <br>
 
-    </div>
+    <h1>Home Page</h1>
 
-    <div class="container">
-        <div class="row">
+</div>
 
-            <div class="col-md-4 col-lg-4">
+<div class="container">
+    <div class="row">
 
-                <h5 class="category-header">
-                    List of Categories
-                </h5>
+        <div class="col-md-4 col-lg-4">
 
-            </div>
+            <h5 class="category-header">
+                List of Categories
+            </h5>
 
-            <div class="col-md-4 col-lg-4">
+        </div>
 
-            </div>
+        <div class="col-md-4 col-lg-4">
 
-            <div class="col-md-4 col-lg-4">
-                <h2 class="category-create">
-                    <button class="btn btn-info"><a href="/category/new">
+        </div>
+
+        <div class="col-md-4 col-lg-4">
+            <h2 class="category-create">
+                <button class="btn btn-success"><a href="/category/new">
                         Add Category
                     </a></button>
 
-                </h2>
-
-            </div>
+            </h2>
 
         </div>
-        <div>
-            {% for categories in categories %}
-            <ul>
-              <li>
-                        <a href="/category/{{ categories.id }}">
-                            {{ categories.name }}
-                        </a>
-                      </li>
-                    </ul>
-            {% endfor %}
-        </div>
+
     </div>
+    <div>
+        {% for categories in categories %}
+        <ul>
+            <li>
+                <a href="/category/{{ categories.id }}">
+                    {{ categories.name }}
+                </a>
+            </li>
+        </ul>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}
-     
