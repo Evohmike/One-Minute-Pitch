@@ -1,7 +1,7 @@
 from flask import render_template,redirect,url_for
 from .import main
-from flask_login import login_required
-from .forms import CategoryForm,PitchForm
+from flask_login import login_required,current_user
+from .forms import CategoryForm,PitchForm,CommentForm
 from ..models import Category,Pitch,Comment
 
 # Views
@@ -75,11 +75,11 @@ def new_comment(id):
     form = CommentForm()
     if form.validate_on_submit():
         comment = form.comment.data
-        new_comment = Comment(comment=comment, user=current_user, pitch_id=id)
+        new_comment = Comment(comment=comment, pitch_id=id)
         new_comment.save_comment()
         return redirect(url_for('.pitch', id=id))
     # title = f' Comment{comment.id}'
-    return render_template('new_comment.html', comment_form=form, pitch=pitch)
+    return render_template('new_coment.html', comment_form=form, pitch=pitch)
 
 
 
