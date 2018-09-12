@@ -1,14 +1,16 @@
-{% extends 'base.html' %} 
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <div class="container">
+    <br>
+    <br>
+    <br>
     <div class="row">
         <div class="col-md-4">
             <h1>List of {{ category.name }}</h1>
         </div>
+
         <div class="col-md-8">
-            <button class="btn btn-info"><h2><a href=""></a></h2></button>
+            <button class="btn btn-info"><h2><a href="/category/pitch/new/{{ category.id }}"></a>Pitch here</h2></button>
         </div>
     </div>
 

@@ -1,7 +1,7 @@
 from flask import render_template,redirect,url_for
 from .import main
 from flask_login import login_required
-from .forms import CategoryForm
+from .forms import CategoryForm,PitchForm
 from ..models import Category,Pitch,Comment
 
 # Views
@@ -47,12 +47,12 @@ def new_pitch(id):
     form = PitchForm()
     if form.validate_on_submit():
         pitch = form.pitch.data
-        new_pitch = Pitch(pitch=pitch, user=current_user, category_id=id)
+        new_pitch = Pitch(pitch=pitch, category_id=id)
         new_pitch.save_pitch()
         return redirect(url_for('.category', id=id))
 
     title = 'New Pitch'
-    return render_template('new_pitch.html', title=title, pitch_form=form)
+    return render_template('new_pitch.html', title=title, pitch_form=form, category=category)
 
 
 @main.route('/pitch/<int:id>')
