@@ -7,7 +7,7 @@ from app.models import User, Role, Category,Pitch
 from app.models import User
 
 # Creating app instance
-app = create_app('development')
+app = create_app('production')
 
 #create manager instance
 manager = Manager(app)
