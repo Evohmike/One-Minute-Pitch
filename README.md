@@ -1,11 +1,10 @@
 # One Minute Pitch
 > A website that helps you speak to the world about your ideas
 
-[Live Link]()
+[Live Link](https://dbminutepitch.herokuapp.com/)
 
 This website will allow you to submit your pitches and other users will vote on them and leave comments to give their feedback on them.
 
-![One minute pitch preview]()
 
 ## As users you can
 
