@@ -1,5 +1,5 @@
 # One Minute Pitch
-> A website that helps you speak to the world about your ideas
+>The One-minute-pitch is a Flask based application that allows users to present their pitches on the site in order to market themselves.The One-minute-Pitch allows users to create an account and login and make a pitch,upvote or downvote a pitch etc
 
 [Live Link](https://dbminutepitch.herokuapp.com/)
 
@@ -56,3 +56,17 @@ To access the Code behind this site, you will need to:
 4. Run the application
   ```bash
   python3.6 manage.py server
+
+
+## Technologies Used 
+* python3
+* Flask
+* Jinja templates
+* HTML
+* Bootstrap
+* Bootswatch
+
+
+### License
+Copyright (c) [Evoh Mike](https://github.com/Evohmike/One-Minute-Pitch/blob/master/LICENSE)
+
