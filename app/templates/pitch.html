@@ -9,20 +9,15 @@
         <hr>
 
     </div>
+   
+
     <div class="card">
-        <div class="card-body">
-            {{ pitch.pitch}}
-            <button class="btn btn-outline-success"><a href="/comment/new/{{ pitch.id }}">comment</a></button>
-
-
-            {% for comment in comment %}
-            <div class="card">
-                <div class="card-body">
-                    {{ comment.comment }} <br>
-                </div>
+            <div class="card-body">
+              <h3 class="card-title">{{ pitch.pitch}}</h3>
+              <p class="card-text">{% for comment in comment %} {{ comment.comment }} <br>{% endfor %}</p>
+              <a href="/comment/new/{{ pitch.id }}"><button type="button" class="btn btn-primary">comment</button>
+                </a>
             </div>
-            {% endfor %}
-        </div>
     </div>
 
 
