@@ -58,7 +58,9 @@ To access the Code behind this site, you will need to:
   python3.6 manage.py server
 
 
-## Technologies Used 
+## Technologies Used
+
+
 * python3
 * Flask
 * Jinja templates
@@ -68,5 +70,7 @@ To access the Code behind this site, you will need to:
 
 
 ### License
-Copyright (c) [Evoh Mike](https://github.com/Evohmike/One-Minute-Pitch/blob/master/LICENSE)
 
+
+Copyright (c) [Evoh Mike](https://github.com/Evohmike/One-Minute-Pitch/blob/master/LICENSE)
+git 
