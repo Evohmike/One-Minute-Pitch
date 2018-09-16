@@ -56,9 +56,10 @@ To access the Code behind this site, you will need to:
 4. Run the application
   ```bash
   python3.6 manage.py server
-  ```
+
 
 ## Technologies Used
+
 
 * python3
 * Flask
@@ -67,6 +68,9 @@ To access the Code behind this site, you will need to:
 * Bootstrap
 * Bootswatch
 
+
 ### License
+
+
 Copyright (c) [Evoh Mike](https://github.com/Evohmike/One-Minute-Pitch/blob/master/LICENSE)
 git 
